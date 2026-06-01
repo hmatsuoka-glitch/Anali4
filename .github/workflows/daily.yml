@@ -4,6 +4,15 @@ on:
   schedule:
     - cron: "0 21 * * *"   # 06:00 JST
   workflow_dispatch:
+    inputs:
+      start_date:
+        description: '開始日 (YYYY-MM-DD, 省略時は today-3)'
+        required: false
+        default: ''
+      end_date:
+        description: '終了日 (YYYY-MM-DD, 省略時は today-1)'
+        required: false
+        default: ''
 
 jobs:
   run:
@@ -21,3 +30,5 @@ jobs:
           TIKTOK_TOKEN_ESCO: ${{ secrets.TIKTOK_TOKEN_ESCO }}
           GOOGLE_SA_JSON: ${{ secrets.GOOGLE_SA_JSON }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          OVERRIDE_START_DATE: ${{ inputs.start_date }}
+          OVERRIDE_END_DATE: ${{ inputs.end_date }}

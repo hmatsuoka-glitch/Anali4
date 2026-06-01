@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import logging
+import os
 from datetime import date, timedelta
 from typing import Any, Optional
 
@@ -210,8 +211,10 @@ def normalize(rows: list[dict], level: str, advertiser: dict) -> list[schema.Row
 
 def collect_account(advertiser: dict, token: str) -> list[schema.Row]:
     today = date.today()
-    start = (today - timedelta(days=3)).strftime("%Y-%m-%d")
-    end = (today - timedelta(days=1)).strftime("%Y-%m-%d")
+    override_start = os.environ.get("OVERRIDE_START_DATE", "").strip()
+    override_end = os.environ.get("OVERRIDE_END_DATE", "").strip()
+    start = override_start if override_start else (today - timedelta(days=3)).strftime("%Y-%m-%d")
+    end = override_end if override_end else (today - timedelta(days=1)).strftime("%Y-%m-%d")
 
     advertiser_id = str(advertiser["advertiser_id"])
     all_rows: list[schema.Row] = []
