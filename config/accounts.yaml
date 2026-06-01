@@ -1,0 +1,9 @@
+accounts:
+  - advertiser_id: "7613640650042425345"
+    name: "翔星建設"
+    sheet_id: "<翔星建設ブックのスプレッドシートID>"
+    token_env: "TIKTOK_TOKEN_SHOSEI"
+  - advertiser_id: "7625571251075022864"
+    name: "エスコプロモーション"
+    sheet_id: "<エスコブックのスプレッドシートID>"
+    token_env: "TIKTOK_TOKEN_ESCO"

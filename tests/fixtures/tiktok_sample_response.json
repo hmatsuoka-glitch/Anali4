@@ -1,0 +1,69 @@
+{
+  "code": 0,
+  "message": "OK",
+  "data": {
+    "list": [
+      {
+        "dimensions": {
+          "ad_id": "111111111",
+          "stat_time_day": "2024-01-15 00:00:00"
+        },
+        "metrics": {
+          "ad_name": "テスト広告A",
+          "spend": "100.50",
+          "impressions": "10000",
+          "clicks": "500",
+          "ctr": "5.0",
+          "cpc": "0.201",
+          "cpm": "10.05",
+          "reach": "8000",
+          "frequency": "1.25",
+          "landing_page_view": "450",
+          "conversion": "20",
+          "result": "20",
+          "video_play_actions": "9000",
+          "video_watched_2s": "80.5",
+          "video_views_p25": "75.0",
+          "video_views_p50": "60.0",
+          "video_views_p75": "45.0",
+          "video_views_p100": "30.0",
+          "average_video_play": "8.5"
+        }
+      },
+      {
+        "dimensions": {
+          "ad_id": "222222222",
+          "stat_time_day": "2024-01-15 00:00:00"
+        },
+        "metrics": {
+          "ad_name": "テスト広告B",
+          "spend": "50.00",
+          "impressions": "5000",
+          "clicks": "200",
+          "ctr": "4.0",
+          "cpc": "0.25",
+          "cpm": "10.00",
+          "reach": "-",
+          "frequency": "-",
+          "landing_page_view": "180",
+          "conversion": "-",
+          "result": "8",
+          "video_play_actions": "4500",
+          "video_watched_2s": "-",
+          "video_views_p25": "-",
+          "video_views_p50": "-",
+          "video_views_p75": "-",
+          "video_views_p100": "-",
+          "average_video_play": "-"
+        }
+      }
+    ],
+    "page_info": {
+      "page": 1,
+      "page_size": 1000,
+      "total_number": 2,
+      "total_page": 1
+    }
+  },
+  "request_id": "test-request-id-001"
+}

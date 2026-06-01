@@ -1,0 +1,23 @@
+name: tiktok-daily
+
+on:
+  schedule:
+    - cron: "0 21 * * *"   # 06:00 JST
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - run: python -m src.main
+        env:
+          TIKTOK_APP_ID: ${{ secrets.TIKTOK_APP_ID }}
+          TIKTOK_APP_SECRET: ${{ secrets.TIKTOK_APP_SECRET }}
+          TIKTOK_TOKEN_SHOSEI: ${{ secrets.TIKTOK_TOKEN_SHOSEI }}
+          TIKTOK_TOKEN_ESCO: ${{ secrets.TIKTOK_TOKEN_ESCO }}
+          GOOGLE_SA_JSON: ${{ secrets.GOOGLE_SA_JSON }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
